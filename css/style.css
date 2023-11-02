@@ -54,6 +54,19 @@ nav {
     box-shadow: .1rem .2rem .3rem rgba(0, 0, 0, 0.5)!important;
 }
 
+/*--------- estilos para página principal ----------*/
+.redirige {
+    color: var(--blanco);
+    font-size: xx-large;
+    font-weight: 700;
+    font-family: var(--fuenteHeading);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.redirige:hover {
+    color: var(--amarillo);
+}
+
 /*--------- estilos para card login tienda ---------*/
 .icono-tienda {
     color: var(--dorado);

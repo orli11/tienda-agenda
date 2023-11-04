@@ -1,186 +1,181 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Fuentes google -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"  crossorigin="crossorigin" as="font">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="./css/style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Agenda de eventos</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">
-            <img src="./img/UGTO.png" alt="escudo ug" width="30" height="auto">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Nosotros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="agendaLogin.html">Agenda</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="tiendaLogin.html">Tienda</a>
-              </li>
-            </ul>
+  <!-- Fuentes google -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
+    crossorigin="crossorigin" as="font">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <title>Agenda de eventos</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="./img/UGTO.png" alt="escudo ug" width="30" height="auto">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="agendaLogin.html">Agenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="tiendaLogin.html">Tienda</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="col-6">
+    <div class="container">
+      <!-- Listado de Eventos Registrados -->
+      <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Día</th>
+            <th scope="col">Lugar</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Descripción</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr id="footer">
+            <th colspan="5" scope="row" class="text-center">
+              Sin eventos registrados......
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <div class="col-8">
+    <!--Ingreso de ponente y calendario-->
+    <!---Ponente-->
+    <section class="vh-100">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-8">
+            <div class="card" style="border-radius: 1rem;">
+              <div class="row g-0">
+                <div class="col-md-12 d-flex align-items-center">
+                  <div class="card-body p-4 p-lg-5 text-black">
+                    <form>
+                      <div class="d-flex align-items-center mb-3 pb-1">
+                        <i class="fa-solid fa-shop fa-2x me-3 icono-tienda"></i>
+                        <span class="h1 fw-bold mb-0">Registro de evento.</span>
+                      </div>
+
+                      <div class="col-md-12 form-outline mb-4">
+                        <input type="text" id="name" class="form-control form-control-lg"
+                          placeholder="Escribe el nombre del evento" />
+                        <label class="form-label" for="name">Nombre del evento. </label>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <input type="text" id="apaterno" class="form-control form-control-lg"
+                          placeholder="Escribe el nombre del ponente" />
+                        <label class="form-label" for="ponente">Nombre del ponente</label>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <input type="text" id="amaterno" class="form-control form-control-lg"
+                          placeholder="Escribe la ubicacion del evento" />
+                        <label class="form-label" for="ubicacion">Lugar del evento</label>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="tel">Elige el área general dirigido </label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                          <label class="form-check-label" for="flexRadioDefault1">
+                            Area complementaria.
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                            checked>
+                          <label class="form-check-label" for="flexRadioDefault2">
+                            Formación Cultural e Intercultural.
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                          <label class="form-check-label" for="flexRadioDefault1">
+                            Creatividad y espiritu emprendedor
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                            checked>
+                          <label class="form-check-label" for="flexRadioDefault2">
+                            Desarrollo personal
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                          <label class="form-check-label" for="flexRadioDefault1">
+                            Responsabilidad social
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <input type="email" id="emai" class="form-control form-control-lg"
+                          placeholder="Escribe el nombre del tema a exponer" />
+                        <label class="form-label" for="email">Tema a presentar</label>
+                      </div>
+
+                      <div class="pt-1 mb-3 text-center">
+                        <button class="btn btn-primary btn-lg btn-block fw-bold" type="button">Ingresar</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-    </nav>
-     <div class="col-6">
-        <div class="container">
-              <!-- Listado de Eventos Registrados -->
-              <!--
-              <table class="table">
-                  <thead class="table-success">
-                      <tr>
-                          <th scope="col">Nombre</th>
-                          <th scope="col">Día</th>
-                          <th scope="col">Lugar</th>
-                          <th scope="col">Hora</th>
-                          <th scope="col">Descripción</th>
-                      </tr>
-                  </thead>
-                  <tbody id="items"></tbody>
-                  <tfoot>
-                      <tr id="footer">
-                          <th colspan="5" scope="row" class="text-center">
-                              Sin eventos registrados......
-                          </th>
-                      </tr>
-                  </tfoot>
-              </table>
-              -->
-
-              <table class="table table-striped table-dark">
-                  <thead>
-                      <tr>
-                          <th scope="col">Nombre</th>
-                          <th scope="col">Día</th>
-                          <th scope="col">Lugar</th>
-                          <th scope="col">Hora</th>
-                          <th scope="col">Descripción</th>
-                      </tr>
-                  </thead>
-                  <tbody></tbody>
-                  <tfoot>
-                      <tr id="footer">
-                          <th colspan="5" scope="row" class="text-center">
-                              Sin eventos registrados......
-                          </th>
-                      </tr>
-                  </tfoot>
-              </table>
+      </div>
+    </section>
   </div>
-     </div>
-     <div class="col-8">
-        <!--Ingreso de ponente y calendario-->
-            <!---Ponente-->
-            <section class="vh-100">
-                <div class="container py-5 h-100">
-                    <div class="row d-flex justify-content-center align-items-center h-100">
-                        <div class="col-8">
-                            <div class="card" style="border-radius: 1rem;">
-                            <div class="row g-0">
-                                <div class="col-md-12 d-flex align-items-center">
-                                <div class="card-body p-4 p-lg-5 text-black">
-                                    <form>
-                                    <div class="d-flex align-items-center mb-3 pb-1">
-                                        <i class="fa-solid fa-shop fa-2x me-3 icono-tienda"></i>
-                                        <span class="h1 fw-bold mb-0">Registro de evento.</span>
-                                    </div>
-            
-                                    <div class="col-md-12 form-outline mb-4">
-                                        <input type="text" id="name" class="form-control form-control-lg" placeholder="Escribe el nombre del evento"/>
-                                        <label class="form-label" for="name">Nombre del evento. </label>
-                                    </div>
-            
-                                    <div class="form-outline mb-4">
-                                        <input type="text" id="apaterno" class="form-control form-control-lg" placeholder="Escribe el nombre del ponente"/>
-                                        <label class="form-label" for="ponente">Nombre del ponente</label>
-                                    </div>
-            
-                                    <div class="form-outline mb-4">
-                                        <input type="text" id="amaterno" class="form-control form-control-lg" placeholder="Escribe la ubicacion del evento"/>
-                                        <label class="form-label" for="ubicacion">Lugar del evento</label>
-                                    </div>
-            
-                                    <div class="form-outline mb-4">
-                                       <label class="form-label" for="tel">Elige el área general dirigido </label>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                              Area complementaria. 
-                                            </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                              Formación Cultural e Intercultural. 
-                                            </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                              Creatividad y espiritu emprendedor 
-                                            </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                              Desarrollo personal 
-                                            </label>
-                                          </div>
-                                            <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                              Responsabilidad social 
-                                            </label>
-                                          </div>
-                                    </div>
-            
-                                    <div class="form-outline mb-4">
-                                        <input type="email" id="emai" class="form-control form-control-lg" placeholder="Escribe el nombre del tema a exponer"/>
-                                        <label class="form-label" for="email">Tema a presentar</label>
-                                    </div>
-            
-                                    <div class="pt-1 mb-3 text-center">
-                                        <button class="btn btn-primary btn-lg btn-block fw-bold" type="button">Ingresar</button>
-                                    </div>
-                                    </form>
-            
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div class="row">
-            <!---Calendario-->
+  <div class="row">
+    <!---Calendario-->
 
-        </div>
-     </div>
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </div>
+  </div>
+  </div>
 
-   
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
 </html>

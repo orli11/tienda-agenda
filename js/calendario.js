@@ -85,6 +85,4 @@ document.querySelector('#next-year').onclick = () => {
 }
 
 // Codigo de prueba
-//Hola, esto es una prueba
-
-//Dani flow es mi vida
+//Codigo de prueba para rama Orlando 

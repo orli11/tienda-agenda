@@ -84,5 +84,3 @@ document.querySelector('#next-year').onclick = () => {
     generateCalendar(curr_month.value, curr_year.value)
 }
 
-// Codigo de prueba
-//Codigo de prueba para rama Orlando 

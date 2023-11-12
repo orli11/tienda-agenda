@@ -44,51 +44,51 @@
     </div>
 </nav>
 
-<section class="vh-100">
-    <div class="container py-5 h-100">
+<section class="mt-5 overflow-hidden">
+    <div class="container py-5 h-100 mt-5">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-xl-10">
                 <div class="card" style="border-radius: 1rem;">
                 <div class="row g-0">
                     <div class="col-md-12 d-flex align-items-center">
-                    <div class="card-body p-4 p-lg-5 text-black">
+                    <div class="card-body p-4 p-lg-4 text-black">
                         <form>
                         <div class="d-flex align-items-center mb-3 pb-1">
                             <i class="fa-solid fa-shop fa-2x me-3 icono-tienda"></i>
-                            <span class="h1 fw-bold mb-0">Inicio Sesión Tienda</span>
+                            <span class="h1 fw-bold mb-0">Registrate en Tienda-DICIS 🐝</span>
                         </div>
 
-                        <div class="col-md-12 form-outline mb-4">
+                        <div class="col-md-12 form-outline mb-3">
                             <input type="text" id="name" class="form-control form-control-lg" placeholder="Escribe tu nombre"/>
                             <label class="form-label" for="name">Nombre</label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div class="form-outline mb-3">
                             <input type="text" id="apaterno" class="form-control form-control-lg" placeholder="Escribe tu apellido paterno"/>
                             <label class="form-label" for="apaterno">Apellido Paterno</label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div class="form-outline mb-3">
                             <input type="text" id="amaterno" class="form-control form-control-lg" placeholder="Escribe tu apellido materno"/>
                             <label class="form-label" for="amaterno">Apellido Materno</label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div class="form-outline mb-3">
                             <input type="tel" id="tell" class="form-control form-control-lg" placeholder="Escribe tu número telefónico"/>
                             <label class="form-label" for="tel">Número telefónico</label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div class="form-outline mb-3">
                             <input type="email" id="emai" class="form-control form-control-lg" placeholder="Escribe tu email"/>
                             <label class="form-label" for="email">Email address</label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div class="form-outline mb-3">
                             <input type="password" id="password" class="form-control form-control-lg" placeholder="Escribe tu password"/>
                             <label class="form-label" for="password">Password</label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div class="form-outline mb-3">
                           <label class="form-label" for="tel">Señala cual será tu rol de inicio: </label>
                           <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="checkVendedor">
@@ -104,10 +104,19 @@
                             </div>
                         </div>
 
-                        <div class="pt-1 mb-3 text-center">
-                            <button class="btn btn-primary btn-lg btn-block fw-bold" type="button">Ingresar</button>
+                        <div class="d-grid gap-2 pt-1 mb-3 text-center">
+                          <button class="btn btn-primary btn-lg btn-block fw-bold" type="button" id="btnLogin">Ingresar</button>
                         </div>
                         </form>
+
+                        <div id="alerta" class="alert alert-dismissible hide fade alert-danger d-flex align-items-center" role="alert">  
+                          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+                          <use xlink:href="#exclamation-triangle-fill"/>
+                          </svg> 
+                          <div class="text-center">
+                              Faltan algunos campos!! 
+                          </div>
+                        </div>
 
                     </div>
                     </div>
@@ -117,5 +126,6 @@
         </div>
     </div>
 </section>
+
 </body>
 </html>

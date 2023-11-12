@@ -63,7 +63,7 @@
                       <span class="h1 fw-bold mb-0">Inicio Sesión Tienda</span>
                     </div>
                     <div class="form-outline mb-4">
-                      <input type="email" id="emai" class="form-control form-control-lg" placeholder="Escribe tu email"/>
+                      <input type="email" id="email" class="form-control form-control-lg" placeholder="Escribe tu email"/>
                       <label class="form-label" for="email">Email address</label>
                     </div>
   
@@ -73,7 +73,7 @@
                     </div>
   
                     <div class="pt-1 mb-3 text-center">
-                      <button class="btn btn-primary btn-lg btn-block fw-bold" type="button">Ingresar</button>
+                      <button class="btn btn-primary btn-lg btn-block fw-bold" type="button" id="btnLogin">Ingresar</button>
                       <a class="btn btn-primary btn-lg btn-block fw-bold" type="button" href="tiendaRegistro.html">Registrate</a>
                     </div>
                   </form>
@@ -85,6 +85,19 @@
         </div>
       </div>
     </div>
+
+
+    <div id="alerta" class="alert alert-dismissible hide fade alert-danger d-flex align-items-center" role="alert">  
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+      <use xlink:href="#exclamation-triangle-fill"/>
+      </svg> 
+      <div class="text-center">
+          Faltan algunos campos!! 
+      </div>
+  </div>
+
   </section>
+
+  <script src="./js/tienda.js"></script>
 </body>
 </html>

@@ -16,26 +16,35 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="./img/UGTO.png" alt="escudo ug" width="30" height="auto">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item ">
-                        <a class="nav-link" aria-current="page" href="#">Cerrar sesión</a>
-                      </li> 
-                </ul>
-            </div>
+          <a class="navbar-brand" href="index.html">
+            <img src="./img/UGTO.png" alt="escudo ug" width="30" height="auto">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="agendaInicial.html">Agenda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Cerrar sesión</a>
+              </li>
+            </ul>
+          </div>
         </div>
     </nav>
 
     <section class="vh-100">
         <div class="container py-5 h-100">
             <div class="row align-items-start">a
-              <div class="col-6">
+              <div class="col-7">
                 <div class="container py-5 h-100">
                     <div class="row d-flex justify-content-center align-items-center h-100">
-                        <div class="col col-xl-10">
+                        <div class="col ">
                             <div class="card" style="border-radius: 1rem;">
                                 <div class="row g-0">
                                     <div class="col-md-12 d-flex align-items-center">
@@ -44,8 +53,8 @@
                                                 <thead>
                                                   <tr >
                                                     <th scope="col">Id</th>
-                                                    <th scope="col">Producto</th>
                                                     <th scope="col">Nombre</th>
+                                                    <th scope="col">Descripción</th>
                                                     <th scope="col">Precio</th>
                                                     <th scope="col">Acciones</th>
                                                   </tr>
@@ -53,8 +62,8 @@
                                                 <tbody>
                                                   <tr>
                                                     <th scope="row">1</th>
-                                                    <td>Imagen</td>
-                                                    <td>Picafresas</td>
+                                                    <h5>Picafresas</h5>
+                                                    <td>Dulces envueltos en chile y azúcar con sabor a fresa</td>
                                                     <td>$2.00</td>
                                                     <td>
                                                         <button class="btn btn-info btn-bi bi-pencil-square">
@@ -86,20 +95,24 @@
                     </div>
                 </div>
               </div>
-              <div class="col-5">
+              <div class="col-4">
                 <div class="container py-5 h-100">
                     <div class="row d-flex justify-content-center align-items-center h-100">
-                        <div class="col col-xl-10">
+                        <div class="col ">
                             <div class="card" style="border-radius: 1rem;">
-                                <div class="row g-0">
+                                <div class="row g-0 text-black">
                                     <div class="col-md-12 d-flex align-items-center">
                                         <div class="card-body p-4 p-lg-5 text-black">
                                             <div class="row text-black"  >
-                                                REGISTRO
+                                                <b>Registro</b>
                                                 <form>
                                                     <div class="form-outline mb-4">
                                                         <label class="form-label" for="name">Producto.</label>
                                                         <input type="nombre" id="nombre" class="form-control form-control-lg" placeholder="Ingresa el nombre del producto."/>
+                                                    </div>
+                                                    <div class="form-outline mb-4">
+                                                        <label class="form-label" for="descripcion">Descripción</label>
+                                                        <input type="descripcion" id="descripcion" class="form-control form-control-lg" placeholder="Describe el producto."/>
                                                     </div>
                                                     <div class="form-outline mb-4">
                                                         <label class="form-label" for="tel">Precio</label>

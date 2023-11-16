@@ -41,7 +41,23 @@
                                     <div class="col-md-12 d-flex align-items-center">
                                         <div class="card-body p-4 p-lg-5 text-black">
                                             <div class="row">
-                                                LISTA DE PRODUCTOS
+                                                <p class="text-center">LISTA DE PRODUCTOS</p>
+                                                <table class="table">
+                                                    <thead class="table-success">
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">Nombre</th>
+                                                            <th scope="col">Precio</th>
+                                                            <th scope="col">Descripción</th>
+                                                            <th scope="col">Vendedor</th>
+                                                            <th scope="col">Acciones</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="items"></tbody>
+                                                    <tfoot>
+                                                        <tr id="footer"></tr>
+                                                    </tfoot>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
@@ -60,7 +76,26 @@
                                     <div class="col-md-12 d-flex align-items-center">
                                         <div class="card-body p-4 p-lg-5 text-black">
                                             <div class="row">
-                                                #####
+                                                <p class="text-center">PRODUCTOS COMPRADOS</p>
+                                                <table class="table">
+                                                    <thead class="table-success">
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">Producto</th>
+                                                            <th scope="col">Cantidad</th>
+                                                            <th scope="col">Accion</th>
+                                                            <th scope="col">Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="items"></tbody>
+                                                    <tfoot>
+                                                        <tr id="footer">
+                                                            <th colspan="5" scope="row" class="text-center">
+                                                                ¡Carrito Vacio!
+                                                            </th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
@@ -73,5 +108,26 @@
             </div>
           </div>
     </section>
+
+    <!-- Template para el producto comprado -->
+    <template id="template-carrito">
+        <tr>
+            <th scope="row">id</th>
+            <td>Cafe</td>
+            <td>1</td>
+            <td style="text-align: center;">
+                <button class="btn btn-warning btn-sm">
+                    +
+                </button>
+
+                <button class="btn btn-danger btn-sm">
+                    -
+                </button>
+                <td>
+                </td>
+                $<span>500</span>
+            </td>
+        </tr>
+    </template>
 </body>
 </html>

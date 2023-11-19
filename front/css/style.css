@@ -55,17 +55,29 @@ nav {
 }
 
 /*--------- estilos para página principal ----------*/
-.redirige {
-    color: var(--blanco);
-    font-size: xx-large;
-    font-weight: 700;
-    font-family: var(--fuenteHeading);
-    text-transform: uppercase;
-    text-decoration: none;
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* O ajusta la altura según sea necesario */
 }
-.redirige:hover {
+.button-amarillo {
+    background-color: var(--amarillo); /* Amarillo */
+    color: var(--blanco); /* Texto blanco */
+    font-weight: bold;
+    font-size: 3.5rem; /* Tamaño del texto */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    margin-right: 1.5rem;
+    padding: 2rem 7.5rem;
+    text-transform: uppercase;
+    font-family: var(--fuenteHeading);
+}
+.button-amarillo:hover {
     color: var(--azul);
 }
+
 
 /*--------- estilos para card login tienda ---------*/
 .icono-tienda {
@@ -76,15 +88,4 @@ nav {
 .icono-agenda {
     color: var(--dorado);
     font-weight: 700;
-}
-
-.button-amarillo {
-    background-color:#FFC107 ; /* Amarillo */
-    color: #fff; /* Texto blanco */
-    padding: 20px 30px; /* Ajusta el padding según sea necesario */
-    font-size: 35px; /* Tamaño del texto */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Esquinas redondeadas */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-    font-weight: bold;
 }

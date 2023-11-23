@@ -61,90 +61,73 @@
             <div class="row g-0">
               <div class="col-md-12 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
-                  <form>
+                  <form action="./backend/files/registro_agenda.php" method="post">
                     <div class="d-flex align-items-center mb-3 pb-1">
                       <i class="fa-solid fa-shop fa-2x me-3 icono-tienda"></i>
-                      <span class="h1 fw-bold mb-0">Registro de evento.</span>
+                      <span class="h1 fw-bold mb-0">Registro de evento</span>
                     </div>
 
                     <div class="col-md-12 form-outline mb-4">
-                      <input type="text" id="nevento" class="form-control form-control-lg"
+                      <input type="text" id="nombre_con" name="nombre_con" class="form-control form-control-lg"
                         placeholder="Escribe el nombre del evento" />
-                      <label class="form-label" for="name">Nombre del evento. </label>
+                      <label class="form-label" for="nombre_con">Nombre del evento. </label>
                     </div>
 
                     <div class="form-outline mb-4">
-                      <input type="text" id="nponente" class="form-control form-control-lg"
+                      <input type="text" id="nombre_pon" name="nombre_pon" class="form-control form-control-lg"
                         placeholder="Escribe el nombre del ponente" />
-                      <label class="form-label" for="ponente">Nombre del ponente</label>
+                      <label class="form-label" for="nombre_pon">Nombre del ponente</label>
                     </div>
 
                     <div class="form-outline mb-4">
-                      <input type="text" id="lugar" class="form-control form-control-lg"
+                      <input type="text" id="especialidad_pon" name="especialidad_pon" class="form-control form-control-lg"
+                        placeholder="Escribe el nombre del ponente" />
+                      <label class="form-label" for="especialidad_pon">Especialidad del ponente</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="text" id="lugar" name="lugar" class="form-control form-control-lg"
                         placeholder="Escribe la ubicacion del evento" />
-                      <label class="form-label" for="ubicacion">Lugar del evento</label>
+                      <label class="form-label" for="lugar">Lugar del evento</label>
                     </div>
-                    <div class="form-outline mb-4">  
-                      <div class="row">
-                        <div class="col">
-                          <input type="date" id="dia" name="trip-start" value="2023-11-30" min="2023-01-01" max="2025-12-31" />
-                        </div>
-                        <div class="col">
-                          <input type="time" id="hora" name="appt" min="09:00" max="18:00" required />
-                        </div>
+                    <div class="row">
+                      <div class="col mb-3 rounded">
+                        <select class="form-control" id="dia" name="dia">
+                          <option value="">Día</option>
+                          <!-- Las opciones se generarán dinámicamente -->
+                        </select>
                       </div>
-                      <div class="row">
-                        <div class="col">
-                          <label class="form-label" for="fecha">Día del evento</label>
-                        </div>
-                        <div class="col">
-                          <label class="form-label" for="hora">Hora del evento</label>
-                        </div>
+                      <div class="col mb-3 rounded">
+                        <select class="form-control" id="mes" name="mes">
+                          <option value="">Mes</option>
+                          <!-- Las opciones se generarán dinámicamente -->
+                        </select>
+                      </div>
+                      <div class="col mb-3 rounded">
+                        <select class="form-control" id="anio" name="anio">
+                          <option value="">Año</option>
+                          <!-- Las opciones se generarán dinámicamente -->
+                        </select>
                       </div>
                     </div>
                     <div class="form-outline mb-4">
-                      <label class="form-label" for="tel">Elige el área general dirigido </label>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="area">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Area complementaria.
-                        </label>
+                      <label class="form-label" for="hora">Hora </label>
+                      <div class="form-outline mb-4">
+                        <input type="text" id="hora" name="hora" class="form-control form-control-lg"
+                          placeholder="Escribe la hora en formato 00:00:00" />
+                        <label class="form-label" for="hora">Hora</label>
                       </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="area"
-                          checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          Formación Cultural e Intercultural.
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="area">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Creatividad y espiritu emprendedor
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="area"
-                          checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          Desarrollo personal
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="area">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Responsabilidad social
-                        </label>
-                      </div>
-                    </div>
-
                     <div class="form-outline mb-4">
-                      <input type="tema" id="tema" class="form-control form-control-lg"
-                        placeholder="Escribe el nombre del tema a exponer" />
-                      <label class="form-label" for="tema">Tema a presentar</label>
+                      <label class="form-label" for="area">Elige el área general dirigido </label>
+                      <div class="form-outline mb-4">
+                        <input type="text" id="area" name="area" class="form-control form-control-lg"
+                          placeholder="Escribe el area EE/DP/CYEE/AC/FCEI" />
+                        <label class="form-label" for="area">Área de créditos</label>
+                      </div>
                     </div>
+                    <!-- Button -->
                     <div class="pt-1 mb-3 text-center">
-                      <button class="btn btn-primary btn-lg btn-block fw-bold" type="button" id="btnRegistrar">Registrar</button>
+                      <button type="submit" class="btn btn-primary btn-lg btn-block fw-bold">Registrar</button>
                     </div>
                   </form>
                 </div>
@@ -197,6 +180,6 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="js/app_agenda.js"></script>
+    <script src="./js/agendaRegistro.js"></script>
 </body>
 </html>

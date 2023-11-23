@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.onload = function() {
     let diaSelect = document.getElementById('dia');
     let mesSelect = document.getElementById('mes');
-    let anoSelect = document.getElementById('ano');
+    let anioSelect = document.getElementById('anio');
 
     for (var i = 1; i <= 31; i++) {
         diaSelect.innerHTML += `<option value="${i}">${i}</option>`;
@@ -35,6 +35,6 @@ window.onload = function() {
     }
 
     for (var i = 1940; i <= 2023; i++) {
-        anoSelect.innerHTML += `<option value="${i}">${i}</option>`;
+        anioSelect.innerHTML += `<option value="${i}">${i}</option>`;
     }
 }

@@ -13,12 +13,15 @@
     $hora = date("H:i:s");
     $area = $_POST['area'];
     $fecha = sprintf('%04d-%02d-%02d', $anio, $mes, $dia);
-    $queryInsertar = "INSERT INTO conferencia VALUES('$nombre_con', '$nombre_pon', '$especialidad_pon', '$lugar' '$fecha', '$hora', '$area')";
+
+    $queryInsertar = "INSERT INTO conferencia VALUES(null, '$nombre_con', '$nombre_pon', '$especialidad_pon', '$lugar', '$fecha', '$hora', '$area')";
     $result = mysqli_query($conn, $queryInsertar);
     
     if($result) {
-        Header("Location: index.php");
-    }
-
-    
+        echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'Evento Registrado']);
+        Header("Location: index.html");
+    } else {
+        echo json_encode(['STATUS' => 'ERROR']);
+        Header("location: ../../agendaInicial.html?error=true");
+    } 
 ?>

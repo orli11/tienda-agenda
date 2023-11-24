@@ -19,7 +19,7 @@
     
     if($result) {
         echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'Evento Registrado']);
-        Header("Location: index.html");
+        Header("location: ../../agendaInicial.html");
     } else {
         echo json_encode(['STATUS' => 'ERROR']);
         Header("location: ../../agendaInicial.html?error=true");

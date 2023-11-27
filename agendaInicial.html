@@ -127,6 +127,7 @@
                     </div>
                   </form>
                 </div>
+                
               </div>
             </div>
           </div>
@@ -137,42 +138,39 @@
             <table class="table table-hover table-light">
               <thead>
                 <tr>
-                  <th scope="col">Nombre del evento</th>
-                  <th scope="col">Nombre del ponente</th>
-                  <th scope="col">Especialidad del ponente</th>
-                  <th scope="col">Lugar del evento</th>
-                  <th scope="col">Fecha</th>
-                  <th scope="col">Hora</th>
-                  <th scope="col">Área</th>
-                  <th scope="col">Acciones</th>
+                  <th >Nombre del evento</th>
+                  <th >Nombre del ponente</th>
+                  <th >Especialidad del ponente</th>
+                  <th >Lugar del evento</th>
+                  <th >Fecha</th>
+                  <th >Hora</th>
+                  <th >Área</th>
+                  <th >Acciones</th>
                 </tr>
               </thead>
-              <tbody id="eventos">
+              <tbody id="eventosBody">
               </tbody>
-              <tfoot>
-                <tr id="footer">
-                  <th colspan="8" scope="row" class="text-center">
+            </table>  
                     <template id="templateEvents">
                       <tr>
-                        <td scope="col">Nombre del evento</td>
-                        <td scope="col">Nombre del ponente</td>
-                        <td scope="col">Especialidad del ponente</td>
-                        <td scope="col">Lugar del evento</td>
-                        <td scope="col">Fecha</td>
-                        <td scope="col">Hora</td>
-                        <td scope="col">Área</th>
-                        <td scope="col">Acciones</td>
-                          <th> 
-                              <button class="btn btn-warning">Actualizar</button>
+                        <td >Nombre del evento</td>
+                        <td >Nombre del ponente</td>
+                        <td >Especialidad del ponente</td>
+                        <td >Lugar del evento</td>
+                        <td >Fecha</td>
+                        <td >Hora</td>
+                        <td >Área</th>
+                        <td >
+                    
+                              <a href="" class="btn btn-warning">Actualizar</a>
                               |
-                              <button class="btn btn-danger" onclick="confirmarEliminar">Eliminar</button>
-                          </th>
+                              <a href="" class="btn btn-danger">Eliminar</a>
+                        
+                        </td>
                       </tr>
                   </template>
                   </th>
                 </tr>
-              </tfoot>
-            </table>            
         </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <?php 
-    include("conexion.php");
+    include("../config/conexion.php");
     $conn = conectar();
     $sqlSelect = "SELECT * FROM conferencia";
     $result = mysqli_query($conn, $sqlSelect);

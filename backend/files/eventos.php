@@ -9,9 +9,12 @@
         while($row = $result->fetch_assoc())
         {
             array_push($json, (object) $row);
+            echo(re)
         }
     } else{
         $json = array('status' => "No se encontraron registros");
     }
+
     echo json_encode($json);
+  
 ?>

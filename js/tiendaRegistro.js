@@ -13,5 +13,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const checkVendedor = document.getElementById('checkVendedor').checked;
         const checkCliente = document.getElementById('checkCliente').checked;
 
+        const sendData = {
+            name,
+            apaterno,
+            amaterno,
+            tell,
+            email,
+            password,
+            checkVendedor,
+            checkCliente
+        }
+
+        fetch('', {
+            method: 'POST',
+            body: JSON.stringify(sendData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((res) => { 
+
+        })
     }
 });

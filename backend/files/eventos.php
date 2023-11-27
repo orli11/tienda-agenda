@@ -1,5 +1,5 @@
 <?php 
-    include("../config/conexion.php");
+    include("conexion.php");
     $conn = conectar();
     $sqlSelect = "SELECT * FROM conferencia";
     $result = mysqli_query($conn, $sqlSelect);
@@ -9,7 +9,6 @@
         while($row = $result->fetch_assoc())
         {
             array_push($json, (object) $row);
-            echo(re)
         }
     } else{
         $json = array('status' => "No se encontraron registros");

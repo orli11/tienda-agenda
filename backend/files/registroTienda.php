@@ -1,28 +1,32 @@
 <?php
     include("../config/conexion.php");
     $conn = conectar();
-    $dataPost = file_get_contents('php//input');
-    $body = json_decode($dataPost, true);
-    $nombre = $body["name"];
-    $apaterno = $body["apaterno"];
-    $amaterno = $body["amaterno"];
-    $telefono = $body["tell"];
-    $email = $body["email"];
-    $password = $body["password"];
-    $esVendedor = isset($body["checkVendedor"]) ? 1 : 0;
-    $esCliente = isset($body["checkCliente"]) ? 1 : 0;
 
-    $queryInsertar = "INSERT INTO usuarios VALUES(null, '$nombre', '$apaterno', '$amaterno', '$telefono', '$email', '$password', '$esVendedor', '$esCliente')";
-    $result = mysqli_query($conn, $queryInsertar);
-    
+    $nombre = $_POST["nombre"];
+    $apaterno = $_POST["apaterno"];
+    $amaterno = $_POST["amaterno"];
+    $telefono = $_POST["telefono"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+      // Verificar que el ususario exista 
+  $queryVerifica = "SELECT * from usuarios WHERE email='$email'";
+  $validaCorreo  = mysqli_query($conn, $queryVerifica);
+  //console.log('email', email)
+  //echo $validaCorreo;
+  //die;
+  if ($validaCorreo->num_rows == 0) {
+    // Usuario no existe
+    $passwordHash = password_hash($password, PASSWORD_BCRYPT);
+    $queryInsert = "INSERT INTO usuarios VALUES(null, '$nombre', '$apaterno', '$amaterno', '$telefono', '$email',  '$passwordHash')";
+    $result = mysqli_query($conn, $queryInsert);
     if($result) {
         echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'Usuario Registrado']);
-        if ($esVendedor === 1){
-            Header("location: ../../tiendaVendedor.html");
-        } elseif ($esCliente === 1) {
-            Header("location: ../../tiendaCliente.html");
-        }
     } else {
-        echo json_encode(['STATUS' => 'ERROR']);
-    } 
+      Header("Location: ../../tiendaRegistro.html?error=true");
+    }
+  } else {
+    // Usuario existe
+    Header("Location: ../../tiendaRegistro.html?existe=true");
+  }
 ?>

@@ -13,5 +13,7 @@
     } else{
         $json = array('status' => "No se encontraron registros");
     }
+
     echo json_encode($json);
+  
 ?>

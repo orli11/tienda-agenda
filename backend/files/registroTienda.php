@@ -21,7 +21,7 @@
     $queryInsert = "INSERT INTO usuarios VALUES(null, '$nombre', '$apaterno', '$amaterno', '$telefono', '$email',  '$passwordHash')";
     $result = mysqli_query($conn, $queryInsert);
     if($result) {
-      Header("Location: ../../tiendaLogin.html");
+        echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'Usuario Registrado']);
     } else {
       Header("Location: ../../tiendaRegistro.html?error=true");
     }

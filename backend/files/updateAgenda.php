@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text-center"> Datos</h1>
-                <form action="actualizarAgenda.php" method="post">
+                <form action="./backend/files/actualizarAgenda.php" method="post">
                     <input type="hidden"
                     name="id_conferencia"
                     class="form-control mb-3"

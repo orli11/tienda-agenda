@@ -17,11 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('@@@ params => ', params, existe)
   })
 
-/*
+
 const checkVendedor = document.getElementById('checkVendedor')
 const checkCliente = document.getElementById('checkCliente')
->>>>>>> main
-
     register = () => {
         // Obtener valores del formulario
         const name = document.getElementById('name').value;
@@ -55,4 +53,3 @@ const checkCliente = document.getElementById('checkCliente')
 
         })
     }
-} */ 

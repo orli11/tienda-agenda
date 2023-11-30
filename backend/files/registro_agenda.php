@@ -10,7 +10,7 @@
     $dia = $_POST['dia'];
     $mes = $_POST['mes'];
     $anio = $_POST['anio'];
-    $hora = date("H:i:s");
+    $hora = $_POST['hora'];
     $area = $_POST['area'];
     $fecha = sprintf('%04d-%02d-%02d', $anio, $mes, $dia);
 

@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-<<<<<<< HEAD
     const btnLogin = document.getElementById('btnLogin');
     btnLogin.addEventListener('click', register);
 
@@ -56,8 +55,4 @@ const checkCliente = document.getElementById('checkCliente')
 
         })
     }
-<<<<<<< HEAD
-});
-=======
 } */ 
->>>>>>> main

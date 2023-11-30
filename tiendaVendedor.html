@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <!-- Fuentes google -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
     crossorigin="crossorigin" as="font">
@@ -124,9 +124,15 @@
                         <td>Nombre del vendedor</td>
                         <td >
                     
-                              <a href="" class="btn btn-warning">Actualizar</a>
-                              |
-                              <a href="" class="btn btn-danger">Eliminar</a>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <a href="updateAgenda.php" class="btn btn-warning">
+                            <i class="bi bi-arrow-clockwise"></i>
+                          </a>
+                            |
+                          <a href="" class="btn btn-danger">
+                            <i class="bi bi-trash"></i>
+                          </a>
+                        </div> 
                         
                         </td>
                       </tr>

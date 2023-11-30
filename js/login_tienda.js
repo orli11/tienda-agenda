@@ -2,7 +2,7 @@ let email
 const btnLogin = document.getElementById('btnLogin')
 
 btnLogin.addEventListener('click', () => {
-    const usuario = document.getElementById('email')
+    const email = document.getElementById('email')
     const password = document.getElementById('password')
     
     if(email.value.trim() === '' || password.value.trim() === ''){
@@ -14,7 +14,7 @@ btnLogin.addEventListener('click', () => {
             email: email.value,
             password: password.value
         }
-        fetch('./Backend/files/login.php', {
+        fetch('./backend/files/login.php', {
             method: 'POST',
             body: JSON.stringify(sendData),
             headers: {
@@ -29,7 +29,7 @@ btnLogin.addEventListener('click', () => {
                 activaAlerta('El usuario no existe en la BD')
             } else if (respuesta.MESSAGE === 'Contraseñas no coinciden'){
                 activaAlerta('Las contraseñas no coinciden')
-            } else if (respuesta.MESSAGE === 'Success') {
+            } else if (respuesta.MESSAGE === 'success') {
                 //reedirigir a home
                 const email = respuesta.EMAIL['email']
                 window.location.replace(`/crud-sistema/home.html?email=${email}`)

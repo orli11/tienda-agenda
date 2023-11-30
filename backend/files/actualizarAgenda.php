@@ -18,6 +18,9 @@
                  nombre_pon='$nombre_pon' 
                  especialidad_pon='$especialidad_pon',
                  lugar='$lugar',
+                 dia = '$dia',
+                 mes = '$mes',
+                 anio = '$anio',
                  fecha='$fecha',
                  hora='$hora',
                  area='$area'

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <<<<<<< HEAD
     const btnLogin = document.getElementById('btnLogin');
     btnLogin.addEventListener('click', register);
-=======
+
     const url = window.location.search
     const params = new URLSearchParams(url)
     const existe = params.get('existe')

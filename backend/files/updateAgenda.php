@@ -21,10 +21,10 @@
   </head>
   <body>
     <div class="container mt-5">
-        <div class="row">
+        <div class="even">
             <div class="col-md-12">
                 <h1 class="text-center"> Datos</h1>
-                <form action="./backend/files/actualizarAgenda.php" method="post">
+                <form action="actualizarAgenda.php" method="post">
                     <input type="hidden"
                     name="id_conferencia"
                     class="form-control mb-3"
@@ -34,21 +34,45 @@
                     <input type="text"
                     name="nombre_con"
                     class="form-control mb-3"
-                    placeholder="nombre_conferencista"
+                    placeholder="Nombre Conferencia"
                     value="<?php echo $even['nombre_con'] ?>">
 
                     <input type="text"
-                    name="nombres"
+                    name="nombre_pon"
                     class="form-control mb-3"
-                    placeholder="nombres"
-                    value="<?php echo $alumno['nombres'] ?>">
+                    placeholder="Nombre Ponente"
+                    value="<?php echo $even['nombre_pon'] ?>">
 
                     <input type="text"
-                    name="apellidos"
+                    name="especialidad_pon"
                     class="form-control mb-3"
-                    placeholder="apellidos"
-                    value="<?php echo $alumno['apellidos'] ?>">
+                    placeholder="Especialidad del Ponente"
+                    value="<?php echo $even['especialidad_pon'] ?>">
                     
+                    <input type="text"
+                    name="lugar"
+                    class="form-control mb-3"
+                    placeholder="Lugar del evento"
+                    value="<?php echo $even['lugar'] ?>">
+
+                    <input type="text"
+                    name="fecha"
+                    class="form-control mb-3"
+                    placeholder="Fecha del evento"
+                    value="<?php echo $even['fecha'] ?>">
+
+                    <input type="text"
+                    name="hora"
+                    class="form-control mb-3"
+                    placeholder="Hora del evento"
+                    value="<?php echo $even['hora'] ?>">
+
+                    <input type="text"
+                    name="area"
+                    class="form-control mb-3"
+                    placeholder="Area del evento"
+                    value="<?php echo $even['area'] ?>">
+
                     <input type="submit" 
                     value="Guardar" 
                     class="btn btn-primary"

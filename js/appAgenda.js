@@ -31,8 +31,7 @@ const creaEventos = () => {
         templateEvents.querySelectorAll('td')[5].textContent = evento.hora
         templateEvents.querySelectorAll('td')[6].textContent = evento.area
         templateEvents.querySelectorAll('a')[1].href=`backend/files/deleteAgenda.php?id_conferencia=${evento.id_conferencia}`
-        templateEvents.querySelectorAll('a')[0].href=`backend/files/actualizarAgenda.php?id_conferencia=${evento.id_conferencia}`
-        
+        templateEvents.querySelectorAll('a')[0].href=`backend/files/updateAgenda.php?id_conferencia=${evento.id_conferencia}`
         const clone = templateEvents.cloneNode(true)
         fragment.appendChild(clone)
     })

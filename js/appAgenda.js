@@ -6,6 +6,7 @@ let eventos
 
 document.addEventListener('DOMContentLoaded', () => {
     loadEventos()
+    
 }) 
 
 const loadEventos = () => {
@@ -40,5 +41,6 @@ const creaEventos = () => {
 }
 
 
+ 
 
 

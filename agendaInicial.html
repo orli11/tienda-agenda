@@ -164,31 +164,34 @@
                               <a href="updateAgenda.php" class="btn btn-warning">
                                 <i class="bi bi-arrow-clockwise"></i>
                               </a>
-                              <a  class="btn btn-danger">
+                              <a  class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminaModal" >
                                 <i class="bi bi-trash"></i>
                               </a>
                           </div>                          
                         </td>
                       </tr> 
                   </template>
-                  <div id="modalEliminar" class="modal" tabindex="-1">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title">¡Importante!</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <div class="modal fade" id="eliminaModal" tabindex="-1" aria-labelledby="eliminaModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-tittle fs-5" id="eliminaModalLabel"> Editar registro </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ¿Deseas eliminar el registro?
+                            </div>
+                            <div class="modal-footer">
+                                <form action="backend/files/deleteAgenda.php" method="post">
+                                    <input type="hidden" name="id_conferencia" id="id_conferencia">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </form>
+                            </div>            
                         </div>
-                        <div class="modal-body">
-                          <p>¿Estas seguro de eliminar el registro?</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                          <button type="button" class="btn btn-primary">Eliminar</button>
-                        </div>
-                      </div>
                     </div>
-                  </div>
-                  </th>
+                </div>
+                  </td>
                 </tr>
         </div>
     </div>

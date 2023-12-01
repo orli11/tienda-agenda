@@ -1,4 +1,4 @@
-let email
+let usuario
 const btnLogin = document.getElementById('btnLogin')
 
 btnLogin.addEventListener('click', () => {
@@ -30,9 +30,9 @@ btnLogin.addEventListener('click', () => {
             } else if (respuesta.MESSAGE === 'Contraseñas no coinciden'){
                 activaAlerta('Las contraseñas no coinciden')
             } else if (respuesta.MESSAGE === 'success') {
-                //reedirigir a home
-                const email = respuesta.EMAIL['email']
-                window.location.replace(`/crud-sistema/home.html?email=${email}`)
+                usuario = respuesta.USUARIO['usuario']
+                console.log(usuario)
+                window.location.replace(`/tienda-agenda/home.html?email=${email}`)
             } else {
                 activaAlerta('Algo salio mal')
             }

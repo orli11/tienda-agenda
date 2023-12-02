@@ -1,6 +1,7 @@
 <?php
-    include('../config/conexion.php');
-    $conn = conectar();
+    include("../config/conexion.php");
+
+    $conn=conectar();
 
     $nombre = $_POST['nombre'];
     $apaterno = $_POST['apaterno'];
@@ -9,23 +10,21 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $queryVerifica = "SELECT * FROM usuarios WHERE email='$email'";
-    $validaUsuario = mysqli_query($conn, $queryVerifica);
-    if($validaUsuario->num_rows == 0){
-
+    //verificar que le usaurio exista
+    $queryVerifica = "SELECT * FROM usuarios WHERE usuario='$usuario'";
+    $validaCorreo = mysqli_query($conn, $queryVerifica);
+    if($validaCorreo->num_rows == 0){
+        //usuario no existe
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
-
-        $query = "INSERT INTO usuarios VALUES (null, '$nombre', '$apaterno', '$amaterno', '$telefono',  '$email', '$passwordHash')";
-        $result = mysqli_query($conn, $query);
-
+        $queryInsert = "INSERT INTO usuarios VALUES(null, '$nombre', '$apaterno', '$amaterno', '$telefono', '$email','$passwordHash')";
+        $result = mysqli_query($conn, $queryInsert);
         if($result){
-            echo json_encode(['STATUS' => 'OK']);
-            header("Location: ../../tiendaVendedor.html");
+            header("Location: ../../tiendaLogin.html");
         } else {
-            echo json_encode(['STATUS' => 'ERROR']);
-            header("location: registroTienda.html");
+            header("location: ../../tiendaRegistro.html?error=true");
         }
-    } else {
-        header("location: ../../tiendaVendedor.html?existe=true");
+    }else{
+        //usuario si existe
+        header("location: ../../tiendaRegistro.html?existe=true");
     }
 ?>

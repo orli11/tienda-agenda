@@ -1,34 +1,31 @@
 <?php
-    include("../config/conexion.php");
+    include('../config/conexion.php');
     $conn = conectar();
-    $nombre = $_POST["name"];
-    $apaterno = $_POST["apaterno"];
-    $amaterno = $_POST["amaterno"];
-    $telefono = $_POST["tell"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    if(isset($_POST["checkVendedor"])) {
-        $esVendedor = 1;
-    } else {
-        $esVendedor = 0;
-    }
-    if(isset($_POST["checkCliente"])) {
-        $esCliente = 1;
-    } else {
-        $esCliente = 0;
-    }
 
-    $queryInsertar = "INSERT INTO usuarios VALUES(null, '$nombre', '$apaterno', '$amaterno', '$telefono', '$email', '$password', '$esVendedor', '$esCliente')";
-    $result = mysqli_query($conn, $queryInsertar);
+    $nombre = $_POST['nombre'];
+    $apaterno = $_POST['apaterno'];
+    $amaterno = $_POST['amaterno'];
+    $telefono = $_POST['telefono'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-    if($result) {
-        echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'Usuario Registrado']);
-        if ($esVendedor === 1){
-            Header("location: ../../tiendaVendedor.html");
-        } elseif ($esCliente === 1) {
-            Header("location: ../../tiendaCliente.html");
+    $queryVerifica = "SELECT * FROM usuarios WHERE email='$email'";
+    $validaUsuario = mysqli_query($conn, $queryVerifica);
+    if($validaUsuario->num_rows == 0){
+
+        $passwordHash = password_hash($password, PASSWORD_BCRYPT);
+
+        $query = "INSERT INTO usuarios VALUES (null, '$nombre', '$apaterno', '$amaterno', '$telefono',  '$email', '$passwordHash')";
+        $result = mysqli_query($conn, $query);
+
+        if($result){
+            echo json_encode(['STATUS' => 'OK']);
+            header("Location: ../../tiendaVendedor.html");
+        } else {
+            echo json_encode(['STATUS' => 'ERROR']);
+            header("location: registroTienda.html");
         }
     } else {
-        echo json_encode(['STATUS' => 'ERROR']);
-    } 
+        header("location: ../../tiendaVendedor.html?existe=true");
+    }
 ?>

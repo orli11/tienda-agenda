@@ -1,7 +1,6 @@
-<!--Para modificar--!
 <?php
     include("../config/conexion.php");
-    $con = conectar();
+    $conn = conectar();
     $dataPost = file_get_contents('php://input');
     $body = json_decode($dataPost, true);
 
@@ -10,7 +9,7 @@
         $password = $body['password'];
 
         $queryUsuario = "SELECT * FROM usuarios WHERE usuario='$email'";
-        $validaUsuario = mysqli_query($con, $queryUsuario);
+        $validaUsuario = mysqli_query($conn, $queryUsuario);
 
         if($validaUsuario->num_rows > 0){
             $usuario = $validaUsuario->fetch_assoc();
@@ -27,5 +26,4 @@
         http_response_code(400);
         echo 'Invalid Data';
     }
-?>
 ?>

@@ -52,7 +52,7 @@
                 <div class="row g-0">
                     <div class="col-md-12 d-flex align-items-center">
                     <div class="card-body p-4 p-lg-4 text-black">
-                        <form method="post" action="./backend/files/registroTienda.php">
+                        <form action="./backend/files/registroTienda.php"  method="post" >
                         <div class="d-flex align-items-center mb-3 pb-1">
                             <i class="fa-solid fa-shop fa-2x me-3 icono-tienda"></i>
                             <span class="h1 fw-bold mb-0">Registrate en Tienda-DICIS 🐝</span>
@@ -74,7 +74,7 @@
                         </div>
 
                         <div class="form-outline mb-3">
-                            <input type="tel" id="tell" name="tell"  class="form-control form-control-lg" placeholder="Escribe tu número telefónico"/>
+                            <input type="tel" id="telefono" name="telefono"  class="form-control form-control-lg" placeholder="Escribe tu número telefónico"/>
                             <label class="form-label" for="tel">Número telefónico</label>
                         </div>
 
@@ -88,24 +88,8 @@
                             <label class="form-label" for="password">Password</label>
                         </div>
 
-                        <div class="form-outline mb-3">
-                          <label class="form-label" for="tel">Señala cual será tu rol de inicio: </label>
-                          <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="false" id="checkVendedor" name="checkVendedor" >
-                              <label class="form-check-label" for="checkVendedor">
-                                Vendedor 
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="false" id="checkCliente" name="checkCliente" >
-                              <label class="form-check-label" for="checkCliente">
-                                Cliente  
-                              </label>
-                            </div>
-                        </div>
-
                         <div class="d-grid gap-2 pt-1 mb-3 text-center">
-                          <button class="btn btn-primary btn-lg btn-block fw-bold" type="submit" id="btnLogin">Ingresar</button>
+                          <button class="btn btn-primary btn-lg btn-block fw-bold" type="submit" >Ingresar</button>
                         </div>
                         </form>
 

@@ -9,13 +9,13 @@
         $password = $body['password'];
 
         $queryUsuario = "SELECT * FROM usuarios WHERE usuario='$email'";
-        $validaUsuario = mysqli_query($conn, $queryUsuario);
+        $validaUsuario = mysqli_query($cnon, $queryUsuario);
 
         if($validaUsuario->num_rows > 0){
             $usuario = $validaUsuario->fetch_assoc();
             //echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => $usuario]);
             if(password_verify($password, $usuario['password'])){
-                echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'success', 'USUARIO' => $usuario]);
+                echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'Success', 'USUARIO' => $usuario]);
             }else {
                 echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => 'Contraseñas no coinciden']);
             }

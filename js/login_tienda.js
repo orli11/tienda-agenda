@@ -1,55 +1,56 @@
-document.addEventListener('DOMContentLoaded', () => {
-    let usuario;
-    const btnLogin = document.getElementById('btnLogin');
+let usuario 
 
-    btnLogin.addEventListener('click', () => {
-        const email = document.getElementById('email');
-        const password = document.getElementById('password');
+const btnLogin = document.getElementById("btnLogin");
 
-        if (email.value.trim() === '' || password.value.trim() === '') {
-            // Mandamos alerta
-            activaAlerta('Los campos no pueden ser vacios');
-        } else {
-            // Intentamos logearnos
-            const sendData = {
-                email: email.value,
-                password: password.value
-            };
-            fetch('./backend/files/login.php', {
-                method: 'POST',
-                body: JSON.stringify(sendData),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(async (response) => { 
-                const respuesta = await response.json();
-                if (respuesta.MESSAGE === 'No se encontro usuario') {
-                    activaAlerta('El usuario no existe en la BD');
-                } else if (respuesta.MESSAGE === 'Contraseñas no coinciden') {
-                    activaAlerta('Las contraseñas no coinciden');
-                } else if (respuesta.MESSAGE === 'success') {
-                    usuario = respuesta.USUARIO['usuario'];
-                    console.log(usuario);
-                    window.location.replace(`/tienda-agenda/tiendaVendedor.html?email=${email.value}`);
-                } else {
-                    activaAlerta('Algo salió mal');
-                }
-            })
-            .catch((error) => {
-                console.log('Error:', error);
-            });
+btnLogin.addEventListener("click", () => {
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+
+    if (email.value.trim() === '' || password.value.trim() === '') {
+        activaAlerta('Los campos no pueden estar vacios.')
+
+    } else {
+        const sendData = {
+            email: email.value,
+            password: password.value
         }
-    });
 
-    const activaAlerta = mensaje => {
-        const alerta = document.getElementsByClassName('alert');
-        alerta[0].textContent = mensaje;
-        alerta[0].classList.remove('hide');
-        alerta[0].classList.add('show');
-        setTimeout(() => {
-            alerta[0].classList.remove('show');
-            alerta[0].classList.add('hide');
-        }, 3000);
-    };
+        fetch('./backend/files/login_tienda.php', {
+            method: 'POST',
+            body: JSON.stringify(sendData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(async (response) => {
+            //console.log(await response.json());
+            const respuesta = await response.json();
+            if(respuesta.MESSAGE === 'No se encontro usuario'){
+                activaAlerta('Usuario no encontrado 🥴');
+            } else if(respuesta.MESSAGE === 'Contraseña no coincide'){
+                activaAlerta('La contraseña no coincide 🫣');
+            } else if(respuesta.MESSAGE === 'Success'){
+                usuario = respuesta.USUARIO['usuario']
+                console.log(usuario)
+                window.location.replace(`/tienda-agenda/tiendaRegistro.html?usuario=${usuario}`);
+            } else {
+                activaAlerta('Algo salió mal')
+                
+            }
+        })
+        .catch((error) => {
+            console.log('SUCEDIO UN ERROR =>', error);
+        });
+    }
 });
+
+
+const activaAlerta = mensaje => {
+    const alerta = document.getElementsByClassName('alert');
+    alerta[0].textContent = mensaje;
+    alerta[0].classList.remove('hide');
+    alerta[0].classList.add('show');
+    setTimeout(() => {
+        alerta[0].classList.remove('show');
+        alerta[0].classList.add('hide');
+    }, 3000);
+}

@@ -8,14 +8,15 @@
         $email = $body['email'];
         $password = $body['password'];
 
-        $queryUsuario = "SELECT * FROM usuarios WHERE usuario='$email'";
-        $validaUsuario = mysqli_query($cnon, $queryUsuario);
+        $queryVendedor = "SELECT * FROM vendedor WHERE email='$email'";
+        $validaVendedor = mysqli_query($conn, $queryVendedor);
 
-        if($validaUsuario->num_rows > 0){
-            $usuario = $validaUsuario->fetch_assoc();
-            //echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => $usuario]);
-            if(password_verify($password, $usuario['password'])){
-                echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'Success', 'USUARIO' => $usuario]);
+        if($validaVendedor->num_rows > 0){
+            $vendedor = $validaVendedor->fetch_assoc();
+            echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => $vendedor]);
+            die;
+            if(password_verify($password, $vendedor['password'])){
+                echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'success', 'VENDEDOR' => $vendedor]);
             }else {
                 echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => 'Contraseñas no coinciden']);
             }

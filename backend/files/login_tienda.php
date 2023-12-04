@@ -13,8 +13,6 @@
 
         if($validaVendedor->num_rows > 0){
             $vendedor = $validaVendedor->fetch_assoc();
-            echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => $vendedor]);
-            die;
             if(password_verify($password, $vendedor['password'])){
                 echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'success', 'VENDEDOR' => $vendedor]);
             }else {
@@ -27,4 +25,5 @@
         http_response_code(400);
         echo 'Invalid Data';
     }
+
 ?>

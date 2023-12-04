@@ -21,13 +21,14 @@ btnLoguin.addEventListener('click', () => {
         })
         .then(async(response) => {
             const respuesta = await response.json()
+            console.log('@@@ usuario => ', respuesta)
             if(respuesta.MESSAGE === 'No se encontro usuario') {
                 activaAlerta('El usuario no existe en la base de datos')
             } else if (respuesta.MESSAGE === 'La contraseña no coincide') {
                 activaAlerta('La contraseña no coinciden...')
             } else if (respuesta.MESSAGE === 'success') {
                 vendedor = respuesta.VENDEDOR['vendedor']
-                window.location.replace(`/tienda-agenda/home.html?vendedor=${vendedor}`)
+                window.location.replace(`/tienda-agenda/tiendaVendedor.html?vendedor=${vendedor}`)
             } else {
                 activaAlerta('Algo salió mal')
             }

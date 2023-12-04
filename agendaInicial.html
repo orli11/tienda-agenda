@@ -179,7 +179,60 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                   
+                                      <form action="actualizarAgenda.php" method="post">
+                                        <input type="hidden"
+                                        name="id_conferencia"
+                                        class="form-control mb-3"
+                                        placeholder="id_conferencia"
+                                        value="<?php echo $even['id_conferencia'] ?>">
+                    
+                                        <input type="text"
+                                        name="nombre_con"
+                                        class="form-control mb-3"
+                                        placeholder="Nombre Conferencia"
+                                        value="<?php echo $even['nombre_con'] ?>">
+                    
+                                        <input type="text"
+                                        name="nombre_pon"
+                                        class="form-control mb-3"
+                                        placeholder="Nombre Ponente"
+                                        value="<?php echo $even['nombre_pon'] ?>">
+                    
+                                        <input type="text"
+                                        name="especialidad_pon"
+                                        class="form-control mb-3"
+                                        placeholder="Especialidad del Ponente"
+                                        value="<?php echo $even['especialidad_pon'] ?>">
+                                        
+                                        <input type="text"
+                                        name="lugar"
+                                        class="form-control mb-3"
+                                        placeholder="Lugar del evento"
+                                        value="<?php echo $even['lugar'] ?>">
+                    
+                                        <input type="text"
+                                        name="fecha"
+                                        class="form-control mb-3"
+                                        placeholder="Fecha del evento"
+                                        value="<?php echo $even['fecha'] ?>">
+                    
+                                        <input type="text"
+                                        name="hora"
+                                        class="form-control mb-3"
+                                        placeholder="Hora del evento"
+                                        value="<?php echo $even['hora'] ?>">
+                    
+                                        <input type="text"
+                                        name="area"
+                                        class="form-control mb-3"
+                                        placeholder="Area del evento"
+                                        value="<?php echo $even['area'] ?>">
+                    
+                                        <input type="submit" 
+                                        value="Guardar" 
+                                        class="btn btn-primary"
+                                        style="width: 100%;">
+                                    </form>
                                     </div>
                                     <div class="modal-footer">
                                         <form action="backend/files/deleteAgenda.php" method="post">
@@ -196,7 +249,7 @@
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-tittle fs-5" id="eliminaModalLabel"> Editar registro </h1>
+                                        <h1 class="modal-tittle fs-5" id="eliminaModalLabel"> Eliminar registro </h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">

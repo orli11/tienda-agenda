@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const url = window.location.search
@@ -12,5 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         alerta[0].classList.add('hide')
       }, 3000)
     }
+    // if??
     console.log('@@@ params => ', params, existe)
   })

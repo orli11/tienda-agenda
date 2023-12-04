@@ -11,12 +11,12 @@
     $password = $_POST['password'];
 
     //verificar que le usaurio exista
-    $queryVerifica = "SELECT * FROM usuarios WHERE usuario='$usuario'";
+    $queryVerifica = "SELECT * FROM vendedor WHERE usuario='$usuario'";
     $validaCorreo = mysqli_query($conn, $queryVerifica);
     if($validaCorreo->num_rows == 0){
         //usuario no existe
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
-        $queryInsert = "INSERT INTO usuarios VALUES(null, '$nombre', '$apaterno', '$amaterno', '$telefono', '$email','$passwordHash')";
+        $queryInsert = "INSERT INTO vendedor VALUES(null, '$nombre', '$apaterno', '$amaterno', '$telefono', '$email','$passwordHash')";
         $result = mysqli_query($conn, $queryInsert);
         if($result){
             header("Location: ../../tiendaLogin.html");

@@ -89,3 +89,23 @@ nav {
     color: var(--dorado);
     font-weight: 700;
 }
+
+.area1 {
+    background-color: #3498db;
+}
+
+.area2 {
+    background-color: #e74c3c;
+}
+
+.area3 {
+    background-color: #2ecc71;
+}
+
+.area4 {
+    background-color: #f39c12;
+}
+
+.area5 {
+    background-color: #9b59b6;
+}

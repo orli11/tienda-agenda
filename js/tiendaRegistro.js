@@ -13,6 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
         alerta[0].classList.add('hide')
       }, 3000)
     }
-    // if??
     console.log('@@@ params => ', params, existe)
-  })
+  }) 

@@ -1,5 +1,6 @@
 const eventosBody = document.getElementById('eventosBody')
 const templateEvents = document.getElementById('templateEvents').content
+const editaModal = document.getElementById('editaModal')
 const fragment = document.createDocumentFragment()
 
 
@@ -40,6 +41,11 @@ const creaEventos = () => {
     })
     eventosBody.appendChild(fragment)
 }
+
+editaModal.addEventListener('shown.bs.modal', even => {
+    
+})
+
 
 
 

@@ -2,6 +2,7 @@ const eventosBody = document.getElementById('eventosBody')
 const templateEvents = document.getElementById('templateEvents').content
 const fragment = document.createDocumentFragment()
 
+
 let eventos
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -39,6 +40,10 @@ const creaEventos = () => {
     })
     eventosBody.appendChild(fragment)
 }
+
+
+
+
 
 
  

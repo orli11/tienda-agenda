@@ -15,7 +15,7 @@
 
  $query = "UPDATE conferencia SET 
                  nombre_con='$nombre_con',
-                 nombre_pon='$nombre_pon' 
+                 nombre_pon='$nombre_pon',
                  especialidad_pon='$especialidad_pon',
                  lugar='$lugar',
                  dia = '$dia',
@@ -31,7 +31,7 @@
  if($resultado) {
      Header('location: agendaInicial.html');
  } else {
-     echo 'Incorrecto';
+     echo 'No se actualizaron los datos';
  }
 ?>
 

@@ -164,107 +164,13 @@
                         <td >Área</th>
                         <td>
                           <div class="d-flex justify-content-between align-items-center">
-                              <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editaModal">
+                              <a href="updateAgenda.php" class="btn btn-warning">
                                 <i class="bi bi-arrow-clockwise"></i>
                               </a>
-                              <a  class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminaModal" data-bs-id="">
+                              <a href="deleteAgenda.php" class="btn btn-danger">
                                 <i class="bi bi-trash"></i>
                               </a>
-                          </div> 
-                          <div class="modal fade" id="editaModal" tabindex="-1" aria-labelledby="editaModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-tittle fs-5" id="editaModalLabel"> Editar registro </h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                      <form action="actualizarAgenda.php" method="post">
-                                        <input type="hidden"
-                                        name="id_conferencia"
-                                        class="form-control mb-3"
-                                        placeholder="id_conferencia"
-                                        value="<?php echo $even['id_conferencia'] ?>">
-                    
-                                        <input type="text"
-                                        name="nombre_con"
-                                        class="form-control mb-3"
-                                        placeholder="Nombre Conferencia"
-                                        value="<?php echo $even['nombre_con'] ?>">
-                    
-                                        <input type="text"
-                                        name="nombre_pon"
-                                        class="form-control mb-3"
-                                        placeholder="Nombre Ponente"
-                                        value="<?php echo $even['nombre_pon'] ?>">
-                    
-                                        <input type="text"
-                                        name="especialidad_pon"
-                                        class="form-control mb-3"
-                                        placeholder="Especialidad del Ponente"
-                                        value="<?php echo $even['especialidad_pon'] ?>">
-                                        
-                                        <input type="text"
-                                        name="lugar"
-                                        class="form-control mb-3"
-                                        placeholder="Lugar del evento"
-                                        value="<?php echo $even['lugar'] ?>">
-                    
-                                        <input type="text"
-                                        name="fecha"
-                                        class="form-control mb-3"
-                                        placeholder="Fecha del evento"
-                                        value="<?php echo $even['fecha'] ?>">
-                    
-                                        <input type="text"
-                                        name="hora"
-                                        class="form-control mb-3"
-                                        placeholder="Hora del evento"
-                                        value="<?php echo $even['hora'] ?>">
-                    
-                                        <input type="text"
-                                        name="area"
-                                        class="form-control mb-3"
-                                        placeholder="Area del evento"
-                                        value="<?php echo $even['area'] ?>">
-                    
-                                        <input type="submit" 
-                                        value="Guardar" 
-                                        class="btn btn-primary"
-                                        style="width: 100%;">
-                                    </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <form action="backend/files/deleteAgenda.php" method="post">
-                                            <input type="hidden" name="id_conferencia" id="id_conferencia">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                            <button type="submit" class="btn btn-danger">Eliminar</button>
-                                        </form>
-                                    </div>            
-                                </div>
-                            </div>
-                        </div>
-    
-                          <div class="modal fade" id="eliminaModal" tabindex="-1" aria-labelledby="eliminaModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-tittle fs-5" id="eliminaModalLabel"> Eliminar registro </h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        ¿Deseas eliminar el registro?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <form action="backend/files/deleteAgenda.php" method="post">
-                                            <input type="hidden" name="id_conferencia" id="id_conferencia">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                            <button type="submit" class="btn btn-danger">Eliminar</button>
-                                        </form>
-                                    </div>            
-                                </div>
-                            </div>
-                        </div>                         
+                          </div>                         
                         </td>
                       </tr> 
                   </template>
@@ -277,7 +183,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./js/agendaRegistro.js"></script>
     <script src="./js/appAgenda.js"></script>
-    <script src="./backend/files/updateAgenda.php"></script>
+    <?php include 'editaModal.php';?>
     
 </body>
 </html>

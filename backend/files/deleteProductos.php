@@ -8,6 +8,6 @@
         Header("Location: ../../tiendaCliente.html");
     } else {
         echo json_encode(['STATUS' => 'ERROR']);
-        header("location: tiendaCliente.html?error=true");
+        header("location: tiendaRegistro.html?error=true");
     }
 ?>

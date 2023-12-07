@@ -2,7 +2,6 @@
 include("../config/conexion.php");
 $conn = conectar();
 
-$id_prod = $_POST['id_prod'];
 $nombre_vendedor = $_POST['nombre_vendedor'];
 $nombre_prod = $_POST['nombre_prod'];
 $facebook = $_POST['facebook'];

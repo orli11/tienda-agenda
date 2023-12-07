@@ -1,3 +1,8 @@
+<?php 
+
+    
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -21,6 +26,11 @@
   <!--Icono UG-->
   <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/a/a0/UGTO.png">
   <link rel="stylesheet" href="./css/style.css">
+
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI/tTz1q3J3ZO1v8f/0tByjktoMhX/K0Zl+UnEIQ=" crossorigin="anonymous"></script>
 
   <title>Agenda de eventos</title>
 </head>
@@ -145,13 +155,15 @@
                         <td >
                     
                         <div class="d-flex justify-content-between align-items-center">
-                          <a href="updateAgenda.php" class="btn btn-warning">
-                            <i class="bi bi-arrow-clockwise"></i>
-                          </a>
+                            <a href="#" class="btn btn-sm btn-warning" onclick="editaProducto(<?php echo $row['id_prod']; ?>)">
+									<i class="bi bi-pencil-fill"></i>	
+									Editar
+							</a>
                             |
-                          <a href="" class="btn btn-danger">
-                            <i class="bi bi-trash"></i>
-                          </a>
+                            <a href="#" class="btn btn-danger" onclick="eliminarProducto(<?php echo $row['id_prod']; ?>)">
+                                <i class="bi bi-trash"></i> 
+                                    Eliminar
+                            </a>
                         </div> 
                         
                         </td>
@@ -161,10 +173,13 @@
         </div>
     </div>
 </div>
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./js/appVendedorProductos.js"></script>
+
 </body>
 </html>

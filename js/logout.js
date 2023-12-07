@@ -1,6 +1,6 @@
 const logout = () => {
     sessionStorage.removeItem('token')
-    window.location = '/tiendaVendedor.php'
+    window.location = '/tiendaCliente.html'
 }
 
 const logoutButton = document.querySelector('logoutButton')

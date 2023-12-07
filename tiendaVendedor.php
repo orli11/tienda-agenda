@@ -48,7 +48,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html">Nosotros</a>
+            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="inicioAgenda.html">Agenda</a>
@@ -129,7 +129,7 @@
         </div>
         <div class="col-7">
             <!-- Listado de eventos registrados -->
-            <p class="text-center" style="color: aliceblue;">Productos registrados</p>
+            <p class="Titulos" style="color: aliceblue;">Productos registrados</p>
             <table class="table table-hover table-light">
               <thead>
                 <tr>
@@ -156,13 +156,11 @@
                     
                         <div class="d-flex justify-content-between align-items-center">
                             <a href="updateProducto.php?action=update" class="btn btn-sm btn-warning">
-									<i class="bi bi-pencil-fill"></i>	
-									Editar
-							</a>
+									            <i class="bi bi-pencil-fill"></i>
+                             </a>
                             |
                             <a href="#" class="btn btn-danger">
-                                <i class="bi bi-trash"></i> 
-                                    Eliminar
+                                <i class="bi bi-trash"></i>
                             </a>
                         </div> 
                         

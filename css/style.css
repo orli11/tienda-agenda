@@ -109,3 +109,15 @@ nav {
 .area5 {
     background-color: #9b59b6;
 }
+
+.Titulos {
+    text-align: center;
+    font-size: 25px;
+    font-style: initial;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.4px;
+    color: var(--dorado), 
+    
+    
+}

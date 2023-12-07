@@ -5,9 +5,9 @@
     $queryDelete = "DELETE FROM productos WHERE id_prod='$id_prod'";
     $result = mysqli_query($conn, $queryDelete);
     if($result) {
-        Header("Location: ../../tiendaCliente.html");
+        Header("Location: ../../tiendaVendedor.php");
     } else {
         echo json_encode(['STATUS' => 'ERROR']);
-        header("location: tiendaRegistro.html?error=true");
+        header("location: tiendaVendedor.php?error=true");
     }
 ?>

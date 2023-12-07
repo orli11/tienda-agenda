@@ -1,3 +1,8 @@
+<?php 
+
+    
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -21,6 +26,11 @@
   <!--Icono UG-->
   <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/a/a0/UGTO.png">
   <link rel="stylesheet" href="./css/style.css">
+
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI/tTz1q3J3ZO1v8f/0tByjktoMhX/K0Zl+UnEIQ=" crossorigin="anonymous"></script>
 
   <title>Agenda de eventos</title>
 </head>
@@ -145,86 +155,15 @@
                         <td >
                     
                         <div class="d-flex justify-content-between align-items-center">
-
-                          <!--MODAL PARA EDITAR-->
-                          <div class="modal fade" id="editaModal" tabindex="-1" aria-labelledby="editaModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="editaModalLabel"> 
-                                            Editar Registro
-                                        </h1>
-                                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close">
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="actualiza.php" method="post">
-                                            <input type="hidden" name="id" id="id">
-                        
-                                            <div class="col-md-12 form-outline mb-4">
-                                              <input type="text" id="nombre_vendedor" name="nombre_vendedor" class="form-control form-control-lg"
-                                                placeholder="Escribe el nombre del vendedor" />
-                                              <label class="form-label" for="nombre_vendedor">Nombre del vendedor </label>
-                                            </div>
-                        
-                                            <div class="col-md-12 form-outline mb-4">
-                                              <input type="text" id="facebook" name="facebook" class="form-control form-control-lg"
-                                                placeholder="Escribe el facebook del vendedor" />
-                                              <label class="form-label" for="nombre_vendedor">Facebook del vendedor </label>
-                                            </div>
-                        
-                                            <div class="col-md-12 form-outline mb-4">
-                                              <input type="text" id="telefono_vendedor" name="telefono_vendedor" class="form-control form-control-lg"
-                                                placeholder="Escribe el telefono del vendedor" />
-                                              <label class="form-label" for="telefono_vendedor">Teléfono del vendedor </label>
-                                            </div>
-                        
-                                            <div class="form-outline mb-4">
-                                              <input type="text" id="nombre_prod" name="nombre_prod" class="form-control form-control-lg"
-                                                placeholder="Escribe el nombre del producto" />
-                                              <label class="form-label" for="nombre_prod">Nombre del producto</label>
-                                            </div>
-                        
-                                            <div class="form-outline mb-4">
-                                              <input type="text" id="precio" name="precio" class="form-control form-control-lg"
-                                                placeholder="Escribe el precio" />
-                                              <label class="form-label" for="precio"> Precio del producto</label>
-                                            </div>
-                        
-                                            <div class="form-outline mb-4">
-                                              <input type="text" id="descripcion_prod" name="descripcion_prod" class="form-control form-control-lg"
-                                                placeholder="Escribe una descripción del producto" />
-                                              <label class="form-label" for="descripcion_prod">Descripción del producto</label>
-                                            </div>
-                        
-                                          
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                    Cerrar
-                                                </button>
-                                                <button type="submit" class="btn btn-primary"> 
-                                                    <i class="bi bi-pencil-square"></i>
-                                                    Actualizar
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                      <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editaModal" 
-                        data-bs-id="<?= $row['id_prod']; ?>" data-bs-nombre="<?= $row['nombre_vendedor']; ?>"
-                        data-bs-facebook="<?= $row['facebook']; ?>" data-bs-telefono="<?= $row['telefono_vendedor']; ?>"
-                        data-bs-nombre-prod="<?= $row['nombre_prod']; ?>" data-bs-precio="<?= $row['precio']; ?>"
-                        data-bs-descripcion="<?= $row['descripcion_prod']; ?>">
-                        <i class="bi bi-arrow-clockwise"></i>
-                        Editar
-                      </a>
-                            
-                          <a href="deleteProductos.php" class="btn btn-danger">
-                            <i class="bi bi-trash"></i>
-                          </a>
+                            <a href="updateProducto.php?action=update" class="btn btn-sm btn-warning">
+									<i class="bi bi-pencil-fill"></i>	
+									Editar
+							</a>
+                            |
+                            <a href="#" class="btn btn-danger" onclick="eliminarProducto(<?php echo $row['id_prod']; ?>)">
+                                <i class="bi bi-trash"></i> 
+                                    Eliminar
+                            </a>
                         </div> 
                         
                         </td>
@@ -234,10 +173,13 @@
         </div>
     </div>
 </div>
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./js/appVendedorProductos.js"></script>
+
 </body>
 </html>

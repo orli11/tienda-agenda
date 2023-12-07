@@ -1,7 +1,7 @@
 const productosBody = document.getElementById('productosBody')
 const templateProductos = document.getElementById('templateProductos').content 
 const fragment = document.createDocumentFragment()
-
+const eliminaProductoModal = document.getElementById('eliminaProductoModal')
 let productos 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,30 +36,35 @@ const creaProductos = () => {
     productosBody.appendChild(fragment)
 }
 
+function eliminarProducto(id_prod) {
+    // Pedir confirmación al usuario
+    var confirmacion = prompt('¿Estás seguro de que deseas eliminar este producto? Ingresa "SI" para confirmar.');
+  
+    // Verificar la respuesta del usuario
+    if (confirmacion === 'SI') {
+      // El usuario confirmó la eliminación
+  
+      $.ajax({
+        url: 'deleteProductos.php',
+        type: 'POST',
+        data: { id: id_prod },
+        success: function(response) {
+          // Manejar la respuesta del servidor
+          console.log(response);
+  
+          // Recargar la página o actualizar la lista de productos después de eliminar
+          location.reload();
+        },
+        error: function(error) {
+          console.error('Error al eliminar el producto:', error);
+        }
+      });
+    } else {
+      // El usuario canceló la eliminación
+      console.log('Eliminación cancelada por el usuario.');
+    }
+  }
+  
 
-document.addEventListener('DOMContentLoaded', function () {
-    var editaModal = new bootstrap.Modal(document.getElementById('editaModal'));
 
-    // Cuando se abre el modal, llenar los campos con los datos correspondientes
-    editaModal.addEventListener('show.bs.modal', function (event) {
-        var button = event.relatedTarget; // Botón que activó el modal
-
-        // Obtener los datos de los atributos data-bs-*
-        var id = button.getAttribute('data-bs-id');
-        var nombreVendedor = button.getAttribute('data-bs-nombre');
-        var facebook = button.getAttribute('data-bs-facebook');
-        var telefono = button.getAttribute('data-bs-telefono');
-        var nombreProd = button.getAttribute('data-bs-nombre-prod');
-        var precio = button.getAttribute('data-bs-precio');
-        var descripcion = button.getAttribute('data-bs-descripcion');
-
-        // Llenar los campos del modal
-        document.getElementById('id').value = id;
-        document.getElementById('nombre_vendedor').value = nombreVendedor;
-        document.getElementById('facebook').value = facebook;
-        document.getElementById('telefono_vendedor').value = telefono;
-        document.getElementById('nombre_prod').value = nombreProd;
-        document.getElementById('precio').value = precio;
-        document.getElementById('descripcion_prod').value = descripcion;
-    });
-});
+   

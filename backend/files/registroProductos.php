@@ -15,9 +15,9 @@
     
     if($result) {
         echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'Producto Registrado']);
-        Header("location: ../../tiendaVendedor.html");
+        Header("location: ../../tiendaVendedor.php");
     } else {
         echo json_encode(['STATUS' => 'ERROR']);
-        Header("location: ../../tiendaVendedor.html?error=true");
+        Header("location: ../../tiendaVendedor.php?error=true");
     } 
 ?>

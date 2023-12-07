@@ -28,7 +28,7 @@ btnLoguin.addEventListener('click', () => {
                 activaAlerta('La contraseña no coinciden...')
             } else if (respuesta.MESSAGE === 'success') {
                 vendedor = respuesta.VENDEDOR['vendedor']
-                window.location.replace(`/tienda-agenda/tiendaVendedor.php?vendedor=${vendedor}`)
+                window.location.replace(`/tienda-agenda/tiendaVendedor.html?vendedor=${vendedor}`)
             } else {
                 activaAlerta('Algo salió mal')
             }

@@ -1,53 +1,118 @@
-<div class="modal fade" id="editaProductoModal" tabindex="-1" aria-labelledby="editarProductoModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="editaModalLabel">
-          Editar Producto
-        </h1>
-        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+<?php
+    include("../config/conexion.php");
+    $conn = conectar();
+?>
 
-      <div class="modal-body">
-        <form action="actualizarProducto.php" method="post">
-          <!-- Campos de edición -->
-          <div class="col-md-12 form-outline mb-4">
-            <input type="text" id="nombre_prod" name="nombre_prod" class="form-control form-control-lg" placeholder="Nombre del producto" readonly />
-            <label class="form-label" for="nombre_prod">Nombre del producto</label>
-          </div>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-          <div class="col-md-12 form-outline mb-4">
-            <input type="text" id="precio" name="precio" class="form-control form-control-lg" placeholder="Precio" />
-            <label class="form-label" for="precio">Precio del producto</label>
-          </div>
+    <title>Actualizar Producto</title>
+</head>
+<body>
+<?php
+if (isset($_POST['enviar'])) {
+  $nombre_vendedor = $_POST['nombre_vendedor'];
+  $nombre_prod = $_POST['nombre_prod'];
+  $facebook = $_POST['facebook'];
+  $telefono_vendedor = $_POST['telefono_vendedor'];
+  $precio = $_POST['precio'];
+  $descripcion_prod = $_POST['descripcion_prod'];
 
-          <div class="col-md-12 form-outline mb-4">
-            <input type="text" id="descripcion_prod" name="descripcion_prod" class="form-control form-control-lg" placeholder="Descripción del producto" />
-            <label class="form-label" for="descripcion_prod">Descripción del producto</label>
-          </div>
+  $queryUpdate = "UPDATE productos SET
+                    nombre_vendedor =?
+                    nombre_prod =?
+                    facebook=?
+                    telefono_vendedor=?
+                    precio=?
+                    descripcion_prod=?
+                      WHERE 
+                    id_prod=?";
 
-          <div class="col-md-12 form-outline mb-4">
-            <input type="text" id="nombre_vendedor" name="nombre_vendedor" class="form-control form-control-lg" placeholder="Nombre del vendedor" readonly />
-            <label class="form-label" for="nombre_vendedor">Nombre del vendedor</label>
-          </div>
+      $stmt = mysqli_prepare($conn, $queryUpdate);
+      mysqli_stmt_bind_param($stmt, "sssssssi", $nombre_vendedor, $nombre_prod, $facebook, $telefono_vendedor, $precio, $descripcion_prod);
 
-          <div class="col-md-12 form-outline mb-4">
-            <input type="text" id="facebook" name="facebook" class="form-control form-control-lg" placeholder="Facebook del vendedor" readonly />
-            <label class="form-label" for="facebook">Facebook del vendedor</label>
-          </div>
+      $resultado = mysqli_stmt_execute($stmt);
 
-          <div class="col-md-12 form-outline mb-4">
-            <input type="text" id="edita_telefono_vendedor" name="telefono_vendedor" class="form-control form-control-lg" placeholder="Teléfono del vendedor" />
-            <label class="form-label" for="telefono_vendedor">Teléfono del vendedor</label>
-          </div>
+      if ($resultado) {
+        header('location: ../../tiendaVendedor.php');
+    } else {
+        echo 'Error al actualizar los datos: ' . mysqli_error($conn);
+    }
+} else {
+        $id_prod = $_GET['id_prod'];
+        $query = "SELECT * FROM productos WHERE id_prod=?";
 
-          <!-- Botones de acción -->
-          <div class="pt-1 mb-3 text-center">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary">Actualizar</button>
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, "i", $id_prod);
+        mysqli_stmt_execute($stmt);
+        $resultado = mysqli_stmt_get_result($stmt);
+
+        if ($even = mysqli_fetch_array($resultado)) {
+          ?>
+          <div class="container mt-5">
+              <div class="row">
+                  <div class="col-md-12">
+                      <h1 class="text-center"> Datos</h1>
+                      <form action="" method="post">
+                          <input type="hidden"
+                                 name="id_prod"
+                                 class="form-control mb-3"
+                                 placeholder="id_prod"
+                                 value="<?php echo $even['id_prod'] ?>">
+  
+                          <input type="text"
+                                 name="nombre_vendedor"
+                                 class="form-control mb-3"
+                                 placeholder="Nombre Vendedor"
+                                 value="<?php echo $even['nombre_vendedor'] ?>">
+  
+                          <input type="text"
+                                 name="facebook"
+                                 class="form-control mb-3"
+                                 placeholder="Facebook"
+                                 value="<?php echo $even['facebook'] ?>">
+  
+                          <input type="text"
+                                 name="telefono_vendedor"
+                                 class="form-control mb-3"
+                                 placeholder="Telefono del vendedor"
+                                 value="<?php echo $even['telefono_vendedor'] ?>">
+  
+                          <input type="text"
+                                 name="precio"
+                                 class="form-control mb-3"
+                                 placeholder="Precio"
+                                 value="<?php echo $even['precio'] ?>">
+  
+                          <input type="text"
+                                 name="descripcion_prod"
+                                 class="form-control mb-3"
+                                 placeholder="Descripción del producto"
+                                 value="<?php echo $even['descripcion_prod'] ?>">
+  
+                          <input type="submit"
+                                 name="enviar"
+                                 class="btn btn-primary"
+                                 style="width: 100%;"
+                                 value="Guardar">
+                      </form>
+                  </div>
+              </div>
           </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+          <?php
+      } else {
+          echo 'No se encontró el producto';
+      }
+  }
+  ?>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"></script>
+  </body>
+  </html>

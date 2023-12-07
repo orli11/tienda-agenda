@@ -155,7 +155,7 @@
                         <td >
                     
                         <div class="d-flex justify-content-between align-items-center">
-                            <a href="#" class="btn btn-sm btn-warning" onclick="editaProducto(<?php echo $row['id_prod']; ?>)">
+                            <a href="updateProducto.php?action=update" class="btn btn-sm btn-warning">
 									<i class="bi bi-pencil-fill"></i>	
 									Editar
 							</a>

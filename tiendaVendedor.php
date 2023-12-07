@@ -160,7 +160,7 @@
 									Editar
 							</a>
                             |
-                            <a href="#" class="btn btn-danger" onclick="eliminarProducto(<?php echo $row['id_prod']; ?>)">
+                            <a href="#" class="btn btn-danger">
                                 <i class="bi bi-trash"></i> 
                                     Eliminar
                             </a>

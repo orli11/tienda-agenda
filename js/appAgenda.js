@@ -42,9 +42,6 @@ const creaEventos = () => {
     eventosBody.appendChild(fragment)
 }
 
-editaModal.addEventListener('shown.bs.modal', even => {
-    
-})
 
 
 

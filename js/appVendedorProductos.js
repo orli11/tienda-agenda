@@ -1,7 +1,7 @@
 const productosBody = document.getElementById('productosBody')
 const templateProductos = document.getElementById('templateProductos').content 
 const fragment = document.createDocumentFragment()
-
+const eliminaProductoModal = document.getElementById('eliminaProductoModal')
 let productos 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,3 +35,36 @@ const creaProductos = () => {
     })
     productosBody.appendChild(fragment)
 }
+
+function eliminarProducto(id_prod) {
+    // Pedir confirmación al usuario
+    var confirmacion = prompt('¿Estás seguro de que deseas eliminar este producto? Ingresa "SI" para confirmar.');
+  
+    // Verificar la respuesta del usuario
+    if (confirmacion === 'SI') {
+      // El usuario confirmó la eliminación
+  
+      $.ajax({
+        url: 'deleteProductos.php',
+        type: 'POST',
+        data: { id: id_prod },
+        success: function(response) {
+          // Manejar la respuesta del servidor
+          console.log(response);
+  
+          // Recargar la página o actualizar la lista de productos después de eliminar
+          location.reload();
+        },
+        error: function(error) {
+          console.error('Error al eliminar el producto:', error);
+        }
+      });
+    } else {
+      // El usuario canceló la eliminación
+      console.log('Eliminación cancelada por el usuario.');
+    }
+  }
+  
+
+
+   
